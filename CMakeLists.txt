@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.5)
-project(gd_muduo)
+project(tiny_muduo)
 
 #muduo 最终编译成so动态库
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
@@ -10,4 +10,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11 -fPIC")
 # 定义参与编译的源文件
 aux_source_directory(. SRC_LIST)
 # 编译生成动态库
-add_library(gd_muduo SHARED ${SRC_LIST})
+add_library(tiny_muduo SHARED ${SRC_LIST})

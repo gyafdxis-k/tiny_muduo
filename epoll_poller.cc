@@ -23,7 +23,7 @@ EpollPoller::~EpollPoller() {
     ::close(epollfd_);
 }
 Timestamp EpollPoller::poll(int timeoutMs, ChannelList* activeChannels) {
-     LOG_INFO("func=%s => fd total count:%lu \n", __FUNCTION__, channels_.size());
+    LOG_INFO("func=%s => fd total count:%lu \n", __FUNCTION__, channels_.size());
     int numEvents = ::epoll_wait(epollfd_, &*events_.begin(), static_cast<int>(events_.size()), timeoutMs);
     int saveErrno = errno;
     Timestamp now(Timestamp::now());
