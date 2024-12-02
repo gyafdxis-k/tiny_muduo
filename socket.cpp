@@ -13,14 +13,16 @@ Socket::~Socket()
 
 void Socket::bindAddress(const InetAddress &localaddr)
 {
-    if (0 != ::bind(sockfd_, (sockaddr*)localaddr.getSockAddr(), sizeof(sockaddr_in))) {
+    if (0 != ::bind(sockfd_, (sockaddr *)localaddr.getSockAddr(), sizeof(sockaddr_in)))
+    {
         LOG_FATAL("bind sockfd:%d failed \n", sockfd_);
     }
 }
 
 void Socket::listen()
 {
-    if (0 != ::listen(sockfd_, 1024)) {
+    if (0 != ::listen(sockfd_, 1024))
+    {
         LOG_FATAL("listen sockfd:%d failed \n", sockfd_);
     }
 }
@@ -30,8 +32,9 @@ int Socket::accept(InetAddress *peeraddr)
     sockaddr_in addr;
     socklen_t len;
     bzero(&addr, sizeof addr);
-    int connfd = ::accept(sockfd_, (sockaddr*)&addr, &len);
-    if (connfd >= 0) {
+    int connfd = ::accept(sockfd_, (sockaddr *)&addr, &len);
+    if (connfd >= 0)
+    {
         peeraddr->setSockAddr(addr);
     }
     return connfd;
@@ -39,7 +42,8 @@ int Socket::accept(InetAddress *peeraddr)
 
 void Socket::shutdownWrite()
 {
-    if (::shutdown(sockfd_, SHUT_WR) < 0) {
+    if (::shutdown(sockfd_, SHUT_WR) < 0)
+    {
         LOG_ERROR("showdown write error");
     }
 }

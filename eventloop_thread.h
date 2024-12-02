@@ -6,14 +6,16 @@
 #include <condition_variable>
 #include <mutex>
 #include <string>
-class EventLoopThread : noncopyable {
+class EventLoopThread : noncopyable
+{
 
 public:
-    using ThreadInitCallback = std::function<void(EventLoop*)>;
-    EventLoopThread(const ThreadInitCallback& cb = ThreadInitCallback(),
-            const std::string &name = std::string(""));
+    using ThreadInitCallback = std::function<void(EventLoop *)>;
+    EventLoopThread(const ThreadInitCallback &cb = ThreadInitCallback(),
+                    const std::string &name = std::string(""));
     ~EventLoopThread();
-    EventLoop* startLoop();
+    EventLoop *startLoop();
+
 private:
     void threadFunc();
     EventLoop *loop_;

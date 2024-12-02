@@ -1,5 +1,6 @@
-class copyable {
+class copyable
+{
 public:
-    copyable(const copyable&) = default;
-    copyable& operator=(const copyable&) = default;
+    copyable(const copyable &) = default;
+    copyable &operator=(const copyable &) = default;
 };
