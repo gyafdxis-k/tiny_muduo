@@ -76,6 +76,8 @@ public:
 
     ssize_t readFd(int fd, int *saveErrno);
 
+    ssize_t writeFd(int fd, int *saveErrno);
+
 private:
     char* begin() {
         return &*buffer_.begin();
