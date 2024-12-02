@@ -1,4 +1,6 @@
 #pragma once
+#include <unistd.h>
+#include <sys/syscall.h>
 namespace CurrentThread
 {
     extern __thread int t_cached_tid;

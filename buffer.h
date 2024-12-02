@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <algorithm>
 class Buffer {
 
 public:

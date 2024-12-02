@@ -4,6 +4,8 @@
 #include "acceptor.h"
 #include "inet_address.h"
 #include "eventloop_threadpool.h"
+#include "buffer.h"
+#include "tcp_connection.h"
 #include "callbacks.h"
 #include <functional>
 #include <string>

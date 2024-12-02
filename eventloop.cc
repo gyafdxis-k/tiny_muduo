@@ -7,6 +7,7 @@
 #include <errno.h>
 #include "poller.h"
 #include <memory>
+#include "channel.h"
 __thread EventLoop *t_loopInThisThread = nullptr;
 
 // 定义默认的poller IO复用接口的超时时间
