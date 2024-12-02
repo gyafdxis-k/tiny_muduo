@@ -75,6 +75,7 @@ void EventLoop::loop()
         doPendingFunctors();
     }
     LOG_INFO("EventLoop %d stop looping \n", threadId_);
+    looping_ = false;
 }
 
 // 退出事件循环 1、loop在自己的线程中调用quit
